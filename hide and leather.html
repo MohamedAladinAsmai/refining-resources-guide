@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Albion Hide Calculator</title>
+    <link rel="stylesheet" href="sytle.css">
+  </head>
+  <body>
+    <h1>Albion Hide Calculator</h1>
+
+    <div class="input-section">
+      <label>
+        Number of Leather:
+        <input type="number" id="numLeather" value="500">
+      </label>
+      <label>
+        Target Tier (2–8):
+        <input type="number" id="targetTier" min="2" max="8">
+      </label>
+      <label>
+        local prdouction output :
+        <input type="number" id="LPO" value="1.58" class="LPO">
+        <label class="checkbox-inline">
+          None
+          <input type="radio" name="bonus" id="none" class="bounes" checked>
+        </label>
+        <label class="checkbox-inline">
+          daily bonus 10%
+          <input type="radio" name="bonus" id="dailyBounes10" class="bounes">
+        </label>
+        
+        <label class="checkbox-inline">
+          daily bonus 20%
+          <input type="radio" name="bonus" id="dailyBounes20" class="bounes">
+        </label>
+        
+        <label class="checkbox-inline">
+          Focus
+          <input type="checkbox" name="bonus" id="focus" class="bounes">
+        </label>
+        
+      </label>
+      <label>
+        Price per Leather (target tier):
+        <input type="number" id="leatherPrice" value="2000">
+      </label>
+    </div>
+      <div class="input-section">
+        <h2>Hide Prices</h2>
+      <div id="hidePrices">
+        <label>
+          Tier 2 Hide:
+          <input type="number" class="hidePrice" id="T2" value="0">
+        </label>
+        <label>
+          Tier 3 Hide:
+          <input type="number" class="hidePrice" id="T3" value="0">
+        </label>
+        <label>
+          Tier 4 Hide:
+          <input type="number" class="hidePrice" id="T4" value="0">
+        </label>
+        <label>
+          Tier 5 Hide:
+          <input type="number" class="hidePrice" id="T5" value="0">
+        </label>
+        <label>
+          Tier 6 Hide:
+          <input type="number" class="hidePrice" id="T6" value="0">
+        </label>
+        <label>
+          Tier 7 Hide:
+          <input type="number" class="hidePrice" id="T7" value="0">
+        </label>
+        <label>
+          Tier 8 Hide:
+          <input type="number" class="hidePrice" id="T8" value="0">
+        </label>
+      </div>
+    </div>
+
+    <button onclick="calculate()" ondblclick="costCalc()">Calculate</button>
+
+    <table id="result" style="display:none;">
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Leather</th>
+          <th>Hides Needed</th>
+          <th>Hide Price</th>
+          <th>Cost</th></tr>
+      </thead>
+      <tbody></tbody>
+      <tfoot>
+        <tr><td colspan="4"><strong>Total Hide Cost</strong></td><td id="totalCost"></td></tr>
+        <tr><td colspan="4"><strong>Total Leather Value</strong></td><td id="totalValue"></td></tr>
+        <tr><td colspan="4"><strong>Profit</strong></td><td id="profit"></td></tr>
+      </tfoot>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="logic.js"></script>
+
+  </body>
+</html>
